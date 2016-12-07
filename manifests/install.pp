@@ -1,6 +1,6 @@
 class orbisnull_packages::install inherits orbisnull_packages {
   
-  $packages_hiera = hiera_array('orbisnull_packages::packages')
+  $packages_hiera = hiera_array('orbisnull_packages::packages', [])
   if $packages != undef {
     $packages_full=concat($packages_hiera, $packages)
   } 
